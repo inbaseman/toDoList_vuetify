@@ -6,6 +6,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+base:"/vuetify_test/",
+
   plugins: [
     vue(),
     vueDevTools(),
