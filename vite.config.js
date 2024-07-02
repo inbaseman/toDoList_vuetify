@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-base:"/vuetify_test_build/",
+base:"/toDoList_vuetify_build/",
 
   plugins: [
     vue(),
