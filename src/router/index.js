@@ -11,7 +11,7 @@ import NotFound from '@/views/NotFound.vue';
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
-  history: createWebHistory(),
+  history: createWebHistory(/build/),
   routes: [
     // {
     //   path: '/',
