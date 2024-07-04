@@ -108,22 +108,22 @@
 
     <v-tabs v-model="tab" bg-color="#9FA8DA">
       <v-tab>
-        <router-link class="nav-link" to="/">
+        <router-link class="nav-link" to="/build/">
           Home
         </router-link>
       </v-tab>
       <v-tab>
-        <router-link class="nav-link" to="/about">
+        <router-link class="nav-link" to="/build/about">
           About
         </router-link>
       </v-tab>
       <v-tab>
-        <router-link class="nav-link" to="/todos">
+        <router-link class="nav-link" to="/build/todos">
           TodoList
         </router-link>
       </v-tab>
       <v-tab>
-        <router-link class="nav-link" to="/date">
+        <router-link class="nav-link" to="/build/date">
           Datepicker
         </router-link>
       </v-tab>
