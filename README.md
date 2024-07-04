@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ###소스 : https://github.com/inbaseman/toDoList_vuetify.git
 ###빌드 : https://inbaseman.github.io/build/
+=======
+### build : https://inbaseman.github.io/build/
+>>>>>>> 72b21d2462e99b66968694ecee4b1643bc5651ab
 
 <!-- 4차 평가물 제출(2024-07-04)
 소스 : https://github.com/inbaseman/toDoList_vuetify.git
