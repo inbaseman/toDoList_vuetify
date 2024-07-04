@@ -1,4 +1,4 @@
-### build : https://inbaseman.github.io/toDoList_vuetify_build/
+### build : https://inbaseman.github.io/build/
 
 
 
