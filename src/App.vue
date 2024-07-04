@@ -1,87 +1,38 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router';
+// import HelloWorld from './components/HelloWorld.vue';
+
+// pinia를 통해 상태관리를 하게 되면 변경되는 상태값에 대한 부분만 재렌더링하는 라이브러리이다 보니, 
+// 메인 App.vue에서는 계산된 속성인 computed()를 통해 데이터를 가지고 와야 반영이 된다
+import { computed } from 'vue';
+import Header from '@/components/Header.vue';
+// pinia에서 데이터 가져오기
+import { useTodoListStore } from '@/stores/todoList.js';
+import Loading from '@/components/Loading.vue';
+// 데이터 디스턱쳐링하기, 분해할당
+const todoListStore = useTodoListStore(); // 반환값이 객체임
+const isLoading = computed(() => todoListStore.isLoading);
+const fetchTodoList = todoListStore.fetchTodoList;
+
+fetchTodoList();
 </script>
 
 <template>
-  <header>
-    
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <v-container class="container">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <Header />
+    <router-view />
+    <Loading v-if="isLoading" />
+    <!-- computed()를 통해 전달받은 isLoading의 true/false
+    값에 따라 로딩중 화면이 노출이 결정된다. -->
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/date">Date Piker</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  </v-container>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>
