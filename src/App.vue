@@ -7,7 +7,11 @@ import { RouterView } from 'vue-router';
 import { computed } from 'vue';
 import Header from '@/components/Header.vue';
 // pinia에서 데이터 가져오기
-import { useTodoListStore } from '@/stores/todoList.js';
+// import { useTodoListStore } from '@/stores/todoList.js';
+import { useTodoListStore } from '@/stores/useTodoListStore.js';
+
+// import { useTodoListStore } from '@/stores/todoList3.js';
+
 import Loading from '@/components/Loading.vue';
 // 데이터 디스턱쳐링하기, 분해할당
 const todoListStore = useTodoListStore(); // 반환값이 객체임

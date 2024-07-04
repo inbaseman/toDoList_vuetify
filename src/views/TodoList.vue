@@ -46,7 +46,9 @@
 <script setup>
 import { computed } from 'vue';
 // pinia에서 데이터 가져오기
-import { useTodoListStore } from '@/stores/todoList.js';
+// import { useTodoListStore } from '@/stores/todoList.js';
+import { useTodoListStore } from '@/stores/useTodoListStore.js';
+// import { useTodoListStore } from '@/stores/todoList3.js';
 // import TodoItem from '@/pages/TodoItem.vue';
 import TodoItem from '@/views/TodoItem.vue';
 

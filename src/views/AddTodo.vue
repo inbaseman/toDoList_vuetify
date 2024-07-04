@@ -65,7 +65,10 @@
 <script setup>
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
-import { useTodoListStore } from '@/stores/todoList.js';
+// import { useTodoListStore } from '@/stores/todoList.js';
+import { useTodoListStore } from '@/stores/useTodoListStore.js';
+
+// import { useTodoListStore } from '@/stores/todoList3.js';
 
 const router = useRouter();
 const { addTodo } = useTodoListStore();

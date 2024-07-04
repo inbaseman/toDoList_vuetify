@@ -20,10 +20,10 @@
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-primary m-1" @click="updateTodoHandler">
-                  수 정
+                    수 정
                 </button>
                 <button type="button" class="btn btn-primary m-1" @click="router.push('/todos')">
-                  취 소
+                    취 소
                 </button>
             </div>
         </div>
@@ -33,27 +33,30 @@
 <script setup>
 import { reactive } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { useTodoListStore } from '@/stores/todoList.js'
+// import { useTodoListStore } from '@/stores/todoList.js';
+import { useTodoListStore } from '@/stores/useTodoListStore.js';
+// import { useTodoListStore } from '@/stores/todoList3.js';
+
 
 const router = useRouter();
 const currentRoute = useRoute();
 
 const { todoList, updateTodo, } = useTodoListStore();
 
-const matchedTodoItem = todoList.find((item)=> item.id === parseInt(currentRoute.params.id))
-if (!matchedTodoItem)  { 
-    router.push('/todos'); 
+const matchedTodoItem = todoList.find((item) => item.id === parseInt(currentRoute.params.id));
+if (!matchedTodoItem) {
+    router.push('/todos');
 }
-const todoItem =  reactive({ ...matchedTodoItem })
+const todoItem = reactive({ ...matchedTodoItem });
 
 const updateTodoHandler = () => {
     let { todo } = todoItem;
-    if (!todo || todo.trim()==="") {
+    if (!todo || todo.trim() === "") {
         alert('할일은 반드시 입력해야 합니다');
         return;
     }
-    updateTodo({ ...todoItem }, ()=>{
+    updateTodo({ ...todoItem }, () => {
         router.push('/todos');
     });
-}
+};
 </script>

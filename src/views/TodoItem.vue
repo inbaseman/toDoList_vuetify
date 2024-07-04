@@ -72,7 +72,9 @@
 <script setup>
 import { useRouter } from 'vue-router';
 // pinia에서 데이터 가져오기
-import { useTodoListStore } from '@/stores/todoList.js';
+// import { useTodoListStore } from '@/stores/todoList.js';
+import { useTodoListStore } from '@/stores/useTodoListStore.js';
+// import { useTodoListStore } from '@/stores/todoList3.js';
 
 defineProps({
   todoItem: { Type: Object, required: true }
