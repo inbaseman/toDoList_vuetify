@@ -6,8 +6,8 @@ import About from '@/views/About.vue';
 import TodoList from '@/views/TodoList.vue';
 import AddTodo from '@/views/AddTodo.vue';
 import EditTodo from '@/views/EditTodo.vue';
-import NotFound from '@/views/NotFound.vue';
 import DatepickerView from '@/views/DatepickerView.vue';
+import NotFound from '@/views/NotFound.vue';
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,14 +31,19 @@ const router = createRouter({
     //   name: 'date',
     //   component: DatepickerView
     // },
-    { path: '/', component: Home },
-    { path: '/about', component: About },
-    { path: '/todos', component: TodoList },
-    { path: '/todos/add', component: AddTodo },
-    { path: '/todos/edit/:id', component: EditTodo },
+    { path: '/build/', component: Home },
+    { path: '/build/about', component: About },
+    { path: '/build/todos', component: TodoList },
+    { path: '/build/todos/add', component: AddTodo },
+    { path: '/build/todos/edit/:id', component: EditTodo },
+    { path: '/build/date', name: 'date', component: DatepickerView },
     { path: '/:paths(.*)*', component: NotFound },
-    { path: '/date', name: 'date', component: DatepickerView },
+
   ]
 });
 
 export default router;
+
+
+
+
